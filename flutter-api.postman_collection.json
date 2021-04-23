@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "5f54a363-7872-4690-a1ef-fc7ec827a7ec",
+		"name": "flutter-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable('token', 'Bearer  '+jsonData.Authorization); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUb2tlblVzZXJSZXNwb25zZShBdXRob3JpemF0aW9uPW51bGwsIFJvbGVzPW51bGwsIFByaXZpbGVnZXM9bnVsbCkiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNTk2NzM0NTE5LCJleHAiOjE1OTY4MjA5MTl9.Clqku8yBWk3x5dgcUe-tT_CqEaHw1Xf_V-6KTww3ClWjfy-7yUwOJ_tu6pgiOA6_h_DEIZr_uxTTzFadO3Gfrw",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"test1\",\n    \"password\": \"test2\"\n}"
+				},
+				"url": "http://localhost:9999/login"
+			},
+			"response": []
+		},
+		{
+			"name": "get all staff",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb20uZmx1dHRlci5hcGkucmVzcG9uc2UuVG9rZW5Vc2VyUmVzcG9uc2VAMWVmNDcxYjIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjE5MTQxMTY2LCJleHAiOjE2MTkyMjc1NjZ9.pWYP0vly-rT6w1ZpjB5VoLpk_vfpd3woloWODU8F4Sc0ISUyy1xqOuPusPgGhi8qQJMbiJxRqqzP9OFauS1XCw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://localhost:9999/api/mstaff/getAll"
+			},
+			"response": []
+		},
+		{
+			"name": "add staff",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb20uZmx1dHRlci5hcGkucmVzcG9uc2UuVG9rZW5Vc2VyUmVzcG9uc2VAMWVmNDcxYjIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjE5MTQxMTY2LCJleHAiOjE2MTkyMjc1NjZ9.pWYP0vly-rT6w1ZpjB5VoLpk_vfpd3woloWODU8F4Sc0ISUyy1xqOuPusPgGhi8qQJMbiJxRqqzP9OFauS1XCw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"staffid\":\"test2\",\n\t\"password\":\"password\",\n\t\"staffname\":\"fachri aulawy\"\n}"
+				},
+				"url": "http://localhost:9999/api/mstaff/add"
+			},
+			"response": []
+		}
+	]
+}
